@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+/* Zebra striping */
+
+th {
+  background: #9d4edd;
+  color: white;
+  font-weight: bold;
+  padding: 6px;
+  border: 1px solid white;
+}
+td {
+  background-color: hsl(278, 67%, 82%);
+  border: 1px solid white;
+}
