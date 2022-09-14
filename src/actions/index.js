@@ -9,3 +9,9 @@ export const updateData = (d) => {
     payload: d,
   };
 };
+export const updateappData = (c) => {
+  return {
+    type: "UPDATE_APP_DATA",
+    payload: c,
+  };
+};
