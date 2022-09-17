@@ -33,6 +33,7 @@ button {
   border-radius: 3px;
   border: 0;
   color: white;
+  margin-top: 3px;
 }
 button:hover {
   background-color: hsl(280, 63%, 67%);
@@ -66,4 +67,7 @@ button {
   padding: 4px;
   border-radius: 3px;
   background-color: hsl(279, 58%, 86%);
+}
+.on {
+  background: #9d4edd;
 }

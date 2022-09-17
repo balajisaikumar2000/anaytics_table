@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import DateInput from "./components/DateInput";
 import TableData from "./components/TableData";
 import Error from "./components/Error";
@@ -6,6 +7,9 @@ import { useSelector } from "react-redux";
 function App() {
   const data = useSelector((state) => state.data);
   const appData = useSelector((state) => state.appData);
+  useEffect(() => {
+    console.log("data appeared");
+  }, [data, appData]);
 
   return (
     <div className="App">
