@@ -6,6 +6,15 @@ import classes from "./TableData.module.scss";
 
 // import { updatedatestatus, getdatestatus } from "../actions";
 export default function TableData() {
+  const [query, setQuery] = useState("");
+  const [strQuery, setStrQuery] = useState("");
+  const [reqQuery, setReqQuery] = useState("");
+  const [resQuery, setResQuery] = useState("");
+  const [impQuery, setImpQuery] = useState("");
+  const [clicksQuery, setClicksQuery] = useState("");
+  const [fillrateQuery, setFillRateQuery] = useState("");
+  const [ctrQuery, setCtrQuery] = useState("");
+
   const [Box, setBox] = useState(false);
   const data = useSelector((state) => state.data);
   // const date = useSelector((state) => state.date);
@@ -33,6 +42,18 @@ export default function TableData() {
     app_ids.push(Object.values(x)[0]);
   });
   console.log(app_ids);
+  const resetHandler = () => {
+    return (
+      setQuery(""),
+      setStrQuery(""),
+      setReqQuery(""),
+      setResQuery(""),
+      setImpQuery(""),
+      setClicksQuery(""),
+      setFillRateQuery(""),
+      setCtrQuery("")
+    );
+  };
 
   return (
     <div className={classes.tableData}>
@@ -134,26 +155,159 @@ export default function TableData() {
             </div>
             <div className={classes.btns}>
               <button onClick={() => setBox(!Box)}>Close</button>
-              <button onClick={() => {}}>Apply Changes</button>
+              {/* <button onClick={() => {}}>Apply Changes</button> */}
             </div>
           </div>
         ) : (
           ""
         )}
       </div>
+      <button className={classes.resetButton} onClick={resetHandler}>
+        Reset Filters
+      </button>
+
       <div className={classes.table}>
-        <table>
+        <table id={"myTable"}>
           <thead>
             <tr>
               {date ? <th>date</th> : ""}
-              {appname ? <th>App Name</th> : ""}
-              {requests ? <th>requests</th> : ""}
-              {response ? <th>responses</th> : ""}
-              {impressions ? <th>impressions</th> : ""}
-              {clicks ? <th>clicks</th> : ""}
-              {revenue ? <th>revenue</th> : ""}
-              {fillrate ? <th>fill rate</th> : ""}
-              {ctr ? <th>CTR</th> : ""}
+              {appname ? (
+                <th>
+                  <div className={classes.whole1}>
+                    <p>App Name</p>
+                    <input
+                      type={"text"}
+                      id={"myInput2"}
+                      className={classes.stringQuery}
+                      onChange={(e) => {
+                        setStrQuery(e.target.value);
+                      }}
+                      placeholder={"enter a string"}
+                    />
+                  </div>
+                </th>
+              ) : (
+                ""
+              )}
+              {requests ? (
+                <th>
+                  <div className={classes.whole2}>
+                    <p>Requests</p>
+                    <input
+                      type={"text"}
+                      className={classes.requestQuery}
+                      onChange={(e) => {
+                        setReqQuery(e.target.value);
+                      }}
+                      placeholder={"enter a number"}
+                    />
+                  </div>
+                </th>
+              ) : (
+                ""
+              )}
+              {response ? (
+                <th>
+                  <div className={classes.whole3}>
+                    <p>Responses</p>
+                    <input
+                      type={"text"}
+                      className={classes.responseQuery}
+                      onChange={(e) => {
+                        setResQuery(e.target.value);
+                      }}
+                      placeholder={"enter a number"}
+                    />
+                  </div>
+                </th>
+              ) : (
+                ""
+              )}
+              {impressions ? (
+                <th>
+                  <div className={classes.whole4}>
+                    <p>Impressions</p>
+                    <input
+                      type={"text"}
+                      className={classes.impressionsQuery}
+                      onChange={(e) => {
+                        setImpQuery(e.target.value);
+                      }}
+                      placeholder={"enter a number"}
+                    />
+                  </div>
+                </th>
+              ) : (
+                ""
+              )}
+              {clicks ? (
+                <th>
+                  <div className={classes.whole5}>
+                    <p>Clicks</p>
+                    <input
+                      type={"text"}
+                      className={classes.clicksQuery}
+                      onChange={(e) => {
+                        setClicksQuery(e.target.value);
+                      }}
+                      placeholder={"enter a number"}
+                    />
+                  </div>
+                </th>
+              ) : (
+                ""
+              )}
+              {revenue ? (
+                <th>
+                  <div className={classes.whole6}>
+                    <p>Revenue</p>
+                    <input
+                      type={"text"}
+                      className={classes.revenueQuery}
+                      onChange={(e) => {
+                        setQuery(e.target.value);
+                      }}
+                      placeholder={"enter a number"}
+                    />
+                  </div>
+                </th>
+              ) : (
+                ""
+              )}
+              {fillrate ? (
+                <th>
+                  <div className={classes.whole7}>
+                    <p>Fill Rate</p>
+                    <input
+                      type={"text"}
+                      className={classes.fillrateQuery}
+                      onChange={(e) => {
+                        setFillRateQuery(e.target.value);
+                      }}
+                      placeholder={"enter a number"}
+                    />
+                  </div>
+                </th>
+              ) : (
+                ""
+              )}
+              {ctr ? (
+                <th>
+                  <div className={classes.whole8}>
+                    <p>CTR</p>
+                    <input
+                      type={"text"}
+                      className={classes.ctrrQuery}
+                      onChange={(e) => {
+                        setCtrQuery(e.target.value);
+                      }}
+                      placeholder={"enter a number"}
+                    />
+                  </div>
+                </th>
+              ) : (
+                ""
+              )}
 
               {/* {columns[0].map((x, i) => {
                 return <th key={i}>{x}</th>;
@@ -161,38 +315,56 @@ export default function TableData() {
             </tr>
           </thead>
           <tbody>
-            {data.map((x, i) => {
-              const index = app_ids.indexOf(x.app_id);
-              const app_name = appData[index]["app_name"];
-              return (
-                <tr key={i}>
-                  {date ? (
-                    <td id={0}>{new Date(x.date).toDateString()}</td>
-                  ) : (
-                    ""
-                  )}
-                  {appname ? <td id={1}>{app_name}</td> : ""}
-                  {requests ? <td id={2}>{x.requests}</td> : ""}
-                  {response ? <td id={3}>{x.responses}</td> : ""}{" "}
-                  {impressions ? <td id={4}>{x.impressions}</td> : ""}
-                  {clicks ? <td id={5}>{x.clicks}</td> : ""}{" "}
-                  {revenue ? <td id={6}>${x.revenue.toFixed(2)}</td> : ""}{" "}
-                  {fillrate ? (
-                    <td id={7}>
-                      {((x.requests / x.responses) * 100).toFixed(2)}%
-                    </td>
-                  ) : (
-                    ""
-                  )}
-                  {ctr ? (
-                    <td id={8}>
-                      {((x.clicks / x.impressions) * 100).toFixed(2)}%
-                    </td>
-                  ) : (
-                    ""
-                  )}
-                  {/* // <td id={0}>{new Date(x.date).toDateString()}</td> */}
-                  {/* <td id={2}>{x.requests}</td>
+            {data
+              .filter((y) => {
+                const index = app_ids.indexOf(y.app_id);
+                const app_name = appData[index]["app_name"];
+                return (
+                  app_name.toLowerCase().includes(strQuery) &&
+                  y.revenue.toFixed(2) > Number(query) &&
+                  y.requests > Number(reqQuery) &&
+                  y.responses > Number(resQuery) &&
+                  y.impressions > Number(impQuery) &&
+                  y.clicks > Number(clicksQuery) &&
+                  ((y.requests / y.responses) * 100).toFixed(2) >
+                    Number(fillrateQuery) &&
+                  ((y.clicks / y.impressions) * 100).toFixed(2) >
+                    Number(ctrQuery)
+                );
+                // y.revenue.toFixed(2) > Number(query);
+              })
+              .map((x, i) => {
+                const index = app_ids.indexOf(x.app_id);
+                const app_name = appData[index]["app_name"];
+                return (
+                  <tr key={i}>
+                    {date ? (
+                      <td id={0}>{new Date(x.date).toDateString()}</td>
+                    ) : (
+                      ""
+                    )}
+                    {appname ? <td id={1}>{app_name}</td> : ""}
+                    {requests ? <td id={2}>{x.requests}</td> : ""}
+                    {response ? <td id={3}>{x.responses}</td> : ""}{" "}
+                    {impressions ? <td id={4}>{x.impressions}</td> : ""}
+                    {clicks ? <td id={5}>{x.clicks}</td> : ""}{" "}
+                    {revenue ? <td id={6}>${x.revenue.toFixed(2)}</td> : ""}{" "}
+                    {fillrate ? (
+                      <td id={7}>
+                        {((x.requests / x.responses) * 100).toFixed(2)}%
+                      </td>
+                    ) : (
+                      ""
+                    )}
+                    {ctr ? (
+                      <td id={8}>
+                        {((x.clicks / x.impressions) * 100).toFixed(2)}%
+                      </td>
+                    ) : (
+                      ""
+                    )}
+                    {/* // <td id={0}>{new Date(x.date).toDateString()}</td> */}
+                    {/* <td id={2}>{x.requests}</td>
                   <td id={3}>{x.responses}</td>
                   <td id={4}>{x.impressions}</td>
                   <td id={5}>{x.clicks}</td>
@@ -203,9 +375,9 @@ export default function TableData() {
                   <td id={8}>
                     {((x.clicks / x.impressions) * 100).toFixed(2)}%
                   </td> */}
-                </tr>
-              );
-            })}
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>

@@ -13,6 +13,7 @@ th {
   font-weight: bold;
   padding: 6px;
   border: 1px solid white;
+  width: fit-content;
 }
 td {
   background-color: hsl(279, 58%, 86%);
@@ -70,4 +71,89 @@ button {
 }
 .on {
   background: #9d4edd;
+}
+.whole {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: max-content;
+  transition: all 2s ease-in-out;
+}
+input {
+  width: max-content;
+}
+.resetButton {
+  margin-left: 5%;
+}
+.stringQuery {
+  display: none;
+}
+.whole1:hover {
+  cursor: pointer;
+  .stringQuery {
+    display: block;
+  }
+}
+.requestQuery {
+  display: none;
+}
+.whole2:hover {
+  cursor: pointer;
+  .requestQuery {
+    display: block;
+  }
+}
+.responseQuery {
+  display: none;
+}
+.whole3:hover {
+  cursor: pointer;
+  .responseQuery {
+    display: block;
+  }
+}
+.impressionsQuery {
+  display: none;
+}
+.whole4:hover {
+  cursor: pointer;
+  .impressionsQuery {
+    display: block;
+  }
+}
+.clicksQuery {
+  display: none;
+}
+.whole5:hover {
+  cursor: pointer;
+  .clicksQuery {
+    display: block;
+  }
+}
+.revenueQuery {
+  display: none;
+}
+.whole6:hover {
+  cursor: pointer;
+  .revenueQuery {
+    display: block;
+  }
+}
+.fillrateQuery {
+  display: none;
+}
+.whole7:hover {
+  cursor: pointer;
+  .fillrateQuery {
+    display: block;
+  }
+}
+.ctrrQuery {
+  display: none;
+}
+.whole8:hover {
+  cursor: pointer;
+  .ctrrQuery {
+    display: block;
+  }
 }
