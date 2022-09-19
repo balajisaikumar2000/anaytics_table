@@ -19,11 +19,11 @@ function DateInput() {
     // const url =
     //   "http://go-dev.greedygame.com/v3/dummy/report?startDate=YYYYMM-DD&endDate=YYYY-MM-DD";
     const sy = startDate.getUTCFullYear();
-    const sm = String(startDate.getUTCMonth()).padStart(2, 0);
+    const sm = String(startDate.getUTCMonth() + 1).padStart(2, 0);
     const sd = String(startDate.getUTCDate()).padStart(2, 0);
 
     const ey = endDate.getUTCFullYear();
-    const em = String(endDate.getUTCMonth()).padStart(2, 0);
+    const em = String(endDate.getUTCMonth() + 1).padStart(2, 0);
     const ed = String(endDate.getUTCDate()).padStart(2, 0);
 
     // console.log("startDate:", startDate);

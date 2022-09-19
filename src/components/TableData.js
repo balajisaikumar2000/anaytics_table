@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 // import { getData, updateData, updateappData } from "../actions";
 import classes from "./TableData.module.scss";
 // import { useDispatch } from "react-redux";
-
 // import { updatedatestatus, getdatestatus } from "../actions";
 export default function TableData() {
   const [query, setQuery] = useState("");
@@ -178,7 +177,7 @@ export default function TableData() {
                     <p className={classes.para}>
                       <p>App Name</p>
                       <img
-                        src="https://img.icons8.com/ios/50/000000/filter--v1.png"
+                        src="https://img.icons8.com/ios/100/FFFFFF/filter--v1.png"
                         alt="filter icon"
                         className={classes.filterImg}
                       />
@@ -204,7 +203,7 @@ export default function TableData() {
                     <p className={classes.para}>
                       <p>Requests</p>
                       <img
-                        src="filter.svg"
+                        src="https://img.icons8.com/ios/100/FFFFFF/filter--v1.png"
                         alt="filter icon"
                         className={classes.filterImg}
                       />
@@ -229,7 +228,7 @@ export default function TableData() {
                     <p className={classes.para}>
                       <p>Responses</p>
                       <img
-                        src="filter.svg"
+                        src="https://img.icons8.com/ios/100/FFFFFF/filter--v1.png"
                         alt="filter icon"
                         className={classes.filterImg}
                       />
@@ -254,7 +253,7 @@ export default function TableData() {
                     <p className={classes.para}>
                       <p>Impressions</p>
                       <img
-                        src="filter.svg"
+                        src="https://img.icons8.com/ios/100/FFFFFF/filter--v1.png"
                         alt="filter icon"
                         className={classes.filterImg}
                       />
@@ -279,7 +278,7 @@ export default function TableData() {
                     <p className={classes.para}>
                       <p>Clicks</p>
                       <img
-                        src="filter.svg"
+                        src="https://img.icons8.com/ios/100/FFFFFF/filter--v1.png"
                         alt="filter icon"
                         className={classes.filterImg}
                       />
@@ -304,7 +303,7 @@ export default function TableData() {
                     <p className={classes.para}>
                       <p>Revenue</p>
                       <img
-                        src="filter.svg"
+                        src="https://img.icons8.com/ios/100/FFFFFF/filter--v1.png"
                         alt="filter icon"
                         className={classes.filterImg}
                       />
@@ -329,7 +328,7 @@ export default function TableData() {
                     <p className={classes.para}>
                       <p>Fill Rate</p>
                       <img
-                        src="filter.svg"
+                        src="https://img.icons8.com/ios/100/FFFFFF/filter--v1.png"
                         alt="filter icon"
                         className={classes.filterImg}
                       />
@@ -354,7 +353,7 @@ export default function TableData() {
                     <p className={classes.para}>
                       <p>CTR</p>
                       <img
-                        src="filter.svg"
+                        src="https://img.icons8.com/ios/100/FFFFFF/filter--v1.png"
                         alt="filter icon"
                         className={classes.filterImg}
                       />
