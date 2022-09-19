@@ -17,7 +17,7 @@ export default function TableData() {
 
   const [Box, setBox] = useState(false);
   const data = useSelector((state) => state.data);
-  // const date = useSelector((state) => state.date);
+
   const [date, setDate] = useState(true);
   const [appname, setAppname] = useState(true);
   const [requests, setRequests] = useState(true);
@@ -61,6 +61,7 @@ export default function TableData() {
         <button onClick={() => setBox(!Box)}>Settings</button>
         {Box ? (
           <div className={classes.box}>
+            <h4>click on the buttons to select and deselect the column view</h4>
             <div className={classes.clmns}>
               <button
                 className={`${classes.column} ${
@@ -174,10 +175,18 @@ export default function TableData() {
               {appname ? (
                 <th>
                   <div className={classes.whole1}>
-                    <p>App Name</p>
+                    <p className={classes.para}>
+                      <p>App Name</p>
+                      <img
+                        src="filter.svg"
+                        alt="filter icon"
+                        className={classes.filterImg}
+                      />
+                    </p>
                     <input
                       type={"text"}
                       id={"myInput2"}
+                      size={16}
                       className={classes.stringQuery}
                       onChange={(e) => {
                         setStrQuery(e.target.value);
@@ -192,9 +201,17 @@ export default function TableData() {
               {requests ? (
                 <th>
                   <div className={classes.whole2}>
-                    <p>Requests</p>
+                    <p className={classes.para}>
+                      <p>Requests</p>
+                      <img
+                        src="filter.svg"
+                        alt="filter icon"
+                        className={classes.filterImg}
+                      />
+                    </p>
                     <input
                       type={"text"}
+                      size={10}
                       className={classes.requestQuery}
                       onChange={(e) => {
                         setReqQuery(e.target.value);
@@ -209,9 +226,17 @@ export default function TableData() {
               {response ? (
                 <th>
                   <div className={classes.whole3}>
-                    <p>Responses</p>
+                    <p className={classes.para}>
+                      <p>Responses</p>
+                      <img
+                        src="filter.svg"
+                        alt="filter icon"
+                        className={classes.filterImg}
+                      />
+                    </p>
                     <input
                       type={"text"}
+                      size={10}
                       className={classes.responseQuery}
                       onChange={(e) => {
                         setResQuery(e.target.value);
@@ -226,9 +251,17 @@ export default function TableData() {
               {impressions ? (
                 <th>
                   <div className={classes.whole4}>
-                    <p>Impressions</p>
+                    <p className={classes.para}>
+                      <p>Impressions</p>
+                      <img
+                        src="filter.svg"
+                        alt="filter icon"
+                        className={classes.filterImg}
+                      />
+                    </p>
                     <input
                       type={"text"}
+                      size={10}
                       className={classes.impressionsQuery}
                       onChange={(e) => {
                         setImpQuery(e.target.value);
@@ -243,9 +276,17 @@ export default function TableData() {
               {clicks ? (
                 <th>
                   <div className={classes.whole5}>
-                    <p>Clicks</p>
+                    <p className={classes.para}>
+                      <p>Clicks</p>
+                      <img
+                        src="filter.svg"
+                        alt="filter icon"
+                        className={classes.filterImg}
+                      />
+                    </p>
                     <input
                       type={"text"}
+                      size={10}
                       className={classes.clicksQuery}
                       onChange={(e) => {
                         setClicksQuery(e.target.value);
@@ -260,9 +301,17 @@ export default function TableData() {
               {revenue ? (
                 <th>
                   <div className={classes.whole6}>
-                    <p>Revenue</p>
+                    <p className={classes.para}>
+                      <p>Revenue</p>
+                      <img
+                        src="filter.svg"
+                        alt="filter icon"
+                        className={classes.filterImg}
+                      />
+                    </p>
                     <input
                       type={"text"}
+                      size={10}
                       className={classes.revenueQuery}
                       onChange={(e) => {
                         setQuery(e.target.value);
@@ -277,9 +326,17 @@ export default function TableData() {
               {fillrate ? (
                 <th>
                   <div className={classes.whole7}>
-                    <p>Fill Rate</p>
+                    <p className={classes.para}>
+                      <p>Fill Rate</p>
+                      <img
+                        src="filter.svg"
+                        alt="filter icon"
+                        className={classes.filterImg}
+                      />
+                    </p>
                     <input
                       type={"text"}
+                      size={10}
                       className={classes.fillrateQuery}
                       onChange={(e) => {
                         setFillRateQuery(e.target.value);
@@ -294,9 +351,17 @@ export default function TableData() {
               {ctr ? (
                 <th>
                   <div className={classes.whole8}>
-                    <p>CTR</p>
+                    <p className={classes.para}>
+                      <p>CTR</p>
+                      <img
+                        src="filter.svg"
+                        alt="filter icon"
+                        className={classes.filterImg}
+                      />
+                    </p>
                     <input
                       type={"text"}
+                      size={10}
                       className={classes.ctrrQuery}
                       onChange={(e) => {
                         setCtrQuery(e.target.value);
@@ -339,7 +404,9 @@ export default function TableData() {
                 return (
                   <tr key={i}>
                     {date ? (
-                      <td id={0}>{new Date(x.date).toDateString()}</td>
+                      <td id={0} className={classes.datee}>
+                        {new Date(x.date).toDateString().slice(4)}
+                      </td>
                     ) : (
                       ""
                     )}

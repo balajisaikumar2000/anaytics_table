@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import DateInput from "./components/DateInput";
 import TableData from "./components/TableData";
 import Error from "./components/Error";
@@ -8,8 +8,8 @@ function App() {
   const data = useSelector((state) => state.data);
   const appData = useSelector((state) => state.appData);
   useEffect(() => {
-    console.log("data appeared");
-  }, [data, appData]);
+    console.log("hey");
+  }, [appData, data]);
 
   return (
     <div className="App">
