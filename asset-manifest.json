@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/anaytics_table/static/css/main.df6b62c5.css",
+    "main.js": "/anaytics_table/static/js/main.0820dc10.js",
+    "index.html": "/anaytics_table/index.html",
+    "main.df6b62c5.css.map": "/anaytics_table/static/css/main.df6b62c5.css.map",
+    "main.0820dc10.js.map": "/anaytics_table/static/js/main.0820dc10.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df6b62c5.css",
+    "static/js/main.0820dc10.js"
+  ]
+}
