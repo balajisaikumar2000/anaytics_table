@@ -384,7 +384,7 @@ export default function TableData() {
                 const index = app_ids.indexOf(y.app_id);
                 const app_name = appData[index]["app_name"];
                 return (
-                  app_name.toLowerCase().includes(strQuery) &&
+                  app_name.toLowerCase().includes(strQuery.toLowerCase()) &&
                   y.revenue.toFixed(2) > Number(query) &&
                   y.requests > Number(reqQuery) &&
                   y.responses > Number(resQuery) &&
