@@ -27,20 +27,16 @@ export default function TableData() {
   const [fillrate, setFillRate] = useState(true);
   const [ctr, setCtr] = useState(true);
 
-  // const dispatch = useDispatch();
-  console.log("data:", data[0]);
   const appData = useSelector((state) => state.appData);
-  console.log("appdata:", appData);
   const app_ids = [];
   const columns = [];
-  columns.push(Object.keys(data[0]));
-  console.log("columns", columns[0]);
+
   columns[0].push("Fillrate", "CTR");
 
   appData.forEach((x, i) => {
     app_ids.push(Object.values(x)[0]);
   });
-  console.log(app_ids);
+
   const resetHandler = () => {
     return (
       setQuery(""),

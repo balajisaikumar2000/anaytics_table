@@ -15,13 +15,3 @@ export const updateappData = (c) => {
     payload: c,
   };
 };
-export const getdatestatus = () => {
-  return {
-    type: "GET_STATUS",
-  };
-};
-export const updatedatestatus = () => {
-  return {
-    type: "UPDATE_STATUS",
-  };
-};
