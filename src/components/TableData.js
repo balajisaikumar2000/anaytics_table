@@ -178,7 +178,7 @@ export default function TableData() {
                     <p className={classes.para}>
                       <p>App Name</p>
                       <img
-                        src={require("./filter.svg")}
+                        src="https://img.icons8.com/ios/50/000000/filter--v1.png"
                         alt="filter icon"
                         className={classes.filterImg}
                       />
