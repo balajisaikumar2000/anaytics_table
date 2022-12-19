@@ -30,6 +30,7 @@ export default function TableData() {
   const appData = useSelector((state) => state.appData);
   const app_ids = [];
   const columns = [];
+  columns.push(Object.keys(data[0]));
 
   columns[0].push("Fillrate", "CTR");
 
