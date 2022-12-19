@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import DateInput from "./components/DateInput";
 import TableData from "./components/TableData";
 import Error from "./components/Error";
